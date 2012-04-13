@@ -1,0 +1,127 @@
+@import compass
+@import railsyard/admin/variables/colors
+@import railsyard/admin/variables/fonts
+
+div.input
+  .wysihtml5-wrapper
+    display: inline-block
+    width: 520px
+
+    .wysihtml5-dialog
+      font-size: 12px
+      margin-top: 3px
+      border: 1px solid #ccc
+      padding: 10px
+      background-color: $light-blue
+
+      label
+        font-size: 12px
+        line-height: 22px
+        float: left
+        clear: left
+        width: 133px
+
+      input, select
+        float: left
+
+      footer
+        clear: left
+        border-top: 1px solid #ccc
+        padding-top: 5px
+        text-align: right
+
+        a
+          color: $blue
+
+          &:hover
+            text-decoration: underline
+
+        a.save
+          display: inline-block
+          padding: 0px 10px
+          background: $light-gray
+          margin-left: 5px
+          color: #444
+          cursor: pointer
+
+    .wysihtml5-toolbar
+      line-height: 32px
+      margin-bottom: 3px
+
+      &> a, &> .wysihtml5-blocks span
+        padding: 5px 10px
+        border: 1px solid #ccc
+        text-decoration: none
+        font-size: 12px
+        color: #444
+        font-family: $decorative-font
+        margin-right: 3px
+
+        &:hover
+          background-color: $light-gray
+
+      &> a.bold
+        font-weight: bold
+
+      &> a.italic
+        font-style: italic
+
+      &> a.ul::before
+        content: ""
+        display: inline-block
+        width: 16px
+        height: 16px
+        background-image: image-url("glyphicons-halflings.png")
+        background-position: -360px -50px
+        vertical-align: middle
+
+      &> a.html::before
+        content: ""
+        display: inline-block
+        width: 16px
+        height: 16px
+        background-image: image-url("glyphicons-halflings.png")
+        background-position: -24px -26px
+        vertical-align: middle
+
+      &> .wysihtml5-blocks
+        display: inline-block
+        position: relative
+
+        ul
+          display: none
+          background-color: white
+          border: 1px solid #ccc
+          +box-shadow(rgba(black, 0.2) 0 2px 3px)
+          padding: 5px 0px
+          width: 140px
+
+          li a
+            display: block
+            line-height: 32px
+            padding: 0 15px
+            text-decoration: none
+            font-family: $decorative-font
+            font-size: 12px
+            color: #444
+
+        &:hover ul
+          display: block
+          position: absolute
+          top: 29px
+          left: -2px
+
+          a:hover
+            background-color: $blue
+            color: white
+
+      .wysihtml5-command-active
+        font-weight: bold
+        border-color: $light-gray
+
+        &:hover
+          background-color: transparent
+
+
+    textarea.raw-html
+      font-family: Monaco, monospaced
